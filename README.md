@@ -34,7 +34,7 @@ This course is suitable for:
 
 1. Clone this repository:
    ```sh
-   git clone https://github.com/your-username/js-frontend-course.git
+   git clone https://github.com/Mario8802/js-frontend-course.git
    ```
 2. Navigate to the project folder:
    ```sh

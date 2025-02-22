@@ -30,10 +30,6 @@ function ticketSale(day, age) {
         } else {
             ticketPrice = 10;
         }
-    } else {
-        console.log("Error!");
-        return;
     }
-
     console.log(`${ticketPrice}$`);
 }

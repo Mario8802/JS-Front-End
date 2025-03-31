@@ -10,3 +10,10 @@ function solve(names) {
         console.log(`Name: ${name} -- Personal Number: ${employees[name]}`);
     }
 }
+
+solve([
+    'Silas Butler',
+    'Adnaan Buckley',
+    'Juan Peterson',
+    'Brendan Villarreal'
+]);

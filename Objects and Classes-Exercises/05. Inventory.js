@@ -1,28 +1,37 @@
-function movieInfo(input) {
-    let movies = [];
 
-    for (let line of input) {
-        if (line.startsWith("addMovie ")) {
-            let name = line.replace("addMovie ", "");
-            movies.push({ name });
-        } 
-        else if (line.includes(" directedBy ")) {
-            let [name, director] = line.split(" directedBy ");
-            let movie = movies.find(m => m.name === name);
-            if (movie) {
-                movie.director = director;
-            }
-        } 
-        else if (line.includes(" onDate ")) {
-            let [name, date] = line.split(" onDate ");
-            let movie = movies.find(m => m.name === name);
-            if (movie) {
-                movie.date = date;
-            }
-        }
+function inventory(data) {
+    let registry = [];
+
+    for (let row of data) {
+        let [name, level, items] = row.split(" / ");
+        level = Number(level);
+
+        let hero = {
+            name,
+            level,
+            items
+        };
+
+        registry.push(hero);
     }
 
-    movies
-        .filter(m => m.name && m.director && m.date)
-        .forEach(m => console.log(JSON.stringify(m)));
+    registry.sort(compareLevels);
+
+    for (let hero of registry) {
+        console.log(`Hero: ${hero.name}`);
+        console.log(`level => ${hero.level}`);
+        console.log(`items => ${hero.items}`);
+    }
+
+    function compareLevels(a, b) {
+        return a.level - b.level;
+    }
+    
 }
+
+inventory([
+    '{"name":"Isacc","level":25,"items":["Apple","GravityGun"]}',
+    '{"name":"Derek","level":12,"items":["Barrel","Torch"]}',
+    '{"name":"Hes","level":1,"items":["Desolator","Sentinel","Anthem"]}'
+  ]);
+  

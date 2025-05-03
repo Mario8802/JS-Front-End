@@ -9,7 +9,7 @@ function toggle() {
     } else {
         extraInformationElement.style.display = 'none';
         toggleButtonElement.textContent = 'More';
-
+        
     }
 
 }

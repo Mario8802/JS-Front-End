@@ -8,7 +8,7 @@ function solve() {
       return;
    }
 
-   for (const row of rows) {
+   for (let row of rows) {
       if (row.textContent.includes(pattern)) {
          row.classList.add('select');
       } else {

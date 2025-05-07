@@ -1,14 +1,29 @@
-function addItem() {
-    const itemsElement = document.getElementById('items');
+// function addItem() {
+//     const itemsElement = document.getElementById('items');
+//     const inputElement = document.getElementById('newItemText');
+
+//     const itemText = inputElement.value;
+
+//     const liElement = document.createElement('li');
+
+//     liElement.textContent = itemText;
+
+//     itemsElement.appendChild(liElement);
+
+//     inputElement.value = '';
+// }
+
+function solve() {
     const inputElement = document.getElementById('newItemText');
+    const itemListElements = document.getElementById('items');
 
-    const itemText = inputElement.value;
+    // Create new item
+    const newItemElement = document.createElement('li');
 
-    const liElement = document.createElement('li');
+    // Add text content 
+    newItemElement.textContent = inputElement.value;
 
-    liElement.textContent = itemText;
+    //Append new element to dom
+    itemListElements.appendChild(newItemElement);
 
-    itemsElement.appendChild(liElement);
-
-    inputElement.value = '';
 }
